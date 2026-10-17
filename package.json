@@ -5,7 +5,8 @@
   "description": "Graph-native food recall intelligence powered by FalkorDB.",
   "scripts": {
     "check": "node --check frontend/app.js && node scripts/check-site.mjs && node scripts/check-secrets.mjs",
-    "build": "node scripts/build-static.mjs"
+    "build": "node scripts/build-static.mjs",
+    "scenarios": "python scenario_benchmark.py --write"
   },
   "engines": {
     "node": "24.x"

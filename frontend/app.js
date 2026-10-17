@@ -1,25 +1,3 @@
-const proof = {
-  case_id: "CASE-001",
-  status: "AWAITING_APPROVAL",
-  affected_lots: ["LOT-BITES-201", "LOT-GRANOLA-101", "LOT-GRANOLA-102"],
-  safe_lots_spared: 7,
-  locations: ["STORE-NORTH", "STORE-SOUTH"],
-  evidence: [
-    {
-      exposure_type: "CROSS_CONTACT",
-      nodes: ["ALERT-001", "ING-ALM-042", "RUN-100", "LINE-01", "RUN-101", "LOT-BITES-201"],
-    },
-    {
-      exposure_type: "DIRECT",
-      nodes: ["ALERT-001", "ING-ALM-042", "RUN-100", "LOT-GRANOLA-101"],
-    },
-    {
-      exposure_type: "DIRECT",
-      nodes: ["ALERT-001", "ING-ALM-042", "RUN-100", "LOT-GRANOLA-102"],
-    },
-  ],
-};
-
 const alertPayload = {
   alert_id: "ALERT-001",
   ingredient_lot_id: "ING-ALM-042",
@@ -41,9 +19,12 @@ const elements = {
   approve: document.querySelector("#approve-button"),
   execute: document.querySelector("#execute-button"),
   reset: document.querySelector("#reset-button"),
+  receipt: document.querySelector(".receipt-link"),
 };
 
-let activeCase = proof;
+let proof = null;
+let cloudEvidence = null;
+let activeCase = null;
 let liveMode = false;
 
 function escapeHtml(value) {
@@ -72,12 +53,30 @@ async function detectRuntime() {
     liveMode = health.runtime === "REAL — CLOUD" || health.runtime === "REAL - CLOUD";
     if (liveMode) {
       elements.runtime.textContent = `Live FalkorDB · ${health.graph}`;
+      elements.analyze.textContent = "Trace live graph";
+      elements.analyze.disabled = false;
       return;
     }
   } catch (_) {
     liveMode = false;
   }
-  elements.runtime.textContent = "Verified cloud evidence playback";
+  try {
+    cloudEvidence = await request("/evidence/cloud-demo-run.json?v=20261017");
+    if (!String(cloudEvidence.execution_status).startsWith("REAL")) {
+      throw new Error("Cloud proof is not marked REAL");
+    }
+    proof = cloudEvidence.plan;
+    activeCase = proof;
+    const graph = cloudEvidence.connection?.graph || proof.graph_name || "retained graph";
+    elements.runtime.textContent = `Verified FalkorDB Cloud run · ${graph}`;
+    elements.message.textContent = "Ready to replay the retained cloud receipt.";
+    elements.analyze.disabled = false;
+  } catch (error) {
+    elements.runtime.textContent = "Cloud proof unavailable";
+    elements.message.textContent = `Evidence load failed: ${error.message}`;
+    elements.analyze.disabled = true;
+    elements.receipt.setAttribute("aria-disabled", "true");
+  }
 }
 
 function graphNode(label, variant = "") {
@@ -158,8 +157,9 @@ async function analyzeCase() {
         body: JSON.stringify(alertPayload),
       });
     } else {
+      if (!proof) throw new Error("Verified cloud evidence is unavailable");
       await new Promise((resolve) => setTimeout(resolve, 520));
-      activeCase = proof;
+      activeCase = { ...proof, status: "AWAITING_APPROVAL" };
     }
     renderGraph();
     renderDecision(activeCase);
@@ -185,6 +185,7 @@ async function approveCase() {
       });
     } else {
       await new Promise((resolve) => setTimeout(resolve, 420));
+      activeCase = { ...activeCase, status: cloudEvidence?.approved_status || "APPROVED" };
     }
     elements.status.textContent = "APPROVED";
     elements.workbench.dataset.stage = "approved";
@@ -201,17 +202,18 @@ async function approveCase() {
 async function executeCase() {
   setBusy(elements.execute, "Executing…");
   try {
-    let first = { new_effects: 5, existing_effects: 0 };
-    let replay = { new_effects: 0, existing_effects: 5 };
+    let first = cloudEvidence?.first_execution;
+    let replay = cloudEvidence?.replay_execution;
     if (liveMode) {
       first = await request(`/v1/cases/${activeCase.case_id}/execute`, { method: "POST", body: "{}" });
       replay = await request(`/v1/cases/${activeCase.case_id}/execute`, { method: "POST", body: "{}" });
     } else {
+      if (!first || !replay) throw new Error("Recorded execution evidence is unavailable");
       await new Promise((resolve) => setTimeout(resolve, 520));
     }
     elements.status.textContent = "COMPLETED";
     elements.workbench.dataset.stage = "completed";
-    elements.message.textContent = `${first.new_effects} new effects · replay produced ${replay.new_effects} duplicates.`;
+    elements.message.textContent = `${first.new_effects} recorded cloud effects · replay produced ${replay.new_effects} duplicates.`;
     elements.execute.textContent = "Executed exactly once";
     elements.execute.disabled = true;
     elements.approve.disabled = true;
@@ -240,7 +242,7 @@ function resetPlayback() {
   elements.execute.textContent = "Execute actions";
   elements.message.textContent = liveMode
     ? "Ready to replay against the current cloud case."
-    : "Waiting for analysis.";
+    : "Ready to replay the retained cloud receipt.";
 }
 
 elements.analyze.addEventListener("click", analyzeCase);

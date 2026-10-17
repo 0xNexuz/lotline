@@ -20,6 +20,7 @@ def create_agent() -> LotLineAgent:
 
 AGENT = create_agent()
 FRONTEND_ROOT = Path(__file__).resolve().parents[1] / "frontend"
+EVIDENCE_FILE = Path(__file__).resolve().parents[1] / "evidence" / "cloud-demo-run.json"
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -54,6 +55,15 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:  # noqa: N802
         path = urlparse(self.path).path
+        if path == "/evidence/cloud-demo-run.json":
+            body = EVIDENCE_FILE.read_bytes()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.send_header("Cache-Control", "no-store")
+            self.end_headers()
+            self.wfile.write(body)
+            return
         if path == "/" or path in {"/styles.css", "/app.js", "/favicon.svg", "/site.webmanifest"} or path.startswith("/assets/"):
             if self._frontend(path):
                 return

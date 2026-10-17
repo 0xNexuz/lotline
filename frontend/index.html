@@ -31,15 +31,15 @@
         <a href="#control" data-nav="control">Control</a>
         <a href="#guardrails" data-nav="guardrails">Boundary</a>
       </nav>
-      <a class="header-cta" href="#proof">Run the case <span>↘</span></a>
+      <a class="header-cta" href="#proof">View proof <span>↘</span></a>
     </header>
 
     <nav class="section-rail" aria-label="Page sections">
-      <a href="#top" data-nav="top"><span>01</span><b>Intro</b></a>
-      <a href="#proof" data-nav="proof"><span>02</span><b>Proof</b></a>
-      <a href="#evidence" data-nav="evidence"><span>03</span><b>Evidence</b></a>
-      <a href="#control" data-nav="control"><span>04</span><b>Control</b></a>
-      <a href="#guardrails" data-nav="guardrails"><span>05</span><b>Boundary</b></a>
+      <a href="#top" data-nav="top" aria-label="Intro"><span>01</span><b>Intro</b></a>
+      <a href="#proof" data-nav="proof" aria-label="Proof"><span>02</span><b>Proof</b></a>
+      <a href="#evidence" data-nav="evidence" aria-label="Evidence"><span>03</span><b>Evidence</b></a>
+      <a href="#control" data-nav="control" aria-label="Control"><span>04</span><b>Control</b></a>
+      <a href="#guardrails" data-nav="guardrails" aria-label="Boundary"><span>05</span><b>Boundary</b></a>
     </nav>
 
     <main id="main">
@@ -68,11 +68,11 @@
           <h1 id="hero-title">See every lot<br />the alert can reach.</h1>
           <p>
             LotLine follows ingredient lineage, production adjacency, cleaning events,
-            shipments, and stores—then proposes the smallest defensible recall.
+            shipments, and stores—then proposes a policy-supported recall boundary.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#proof">Open the live case</a>
-            <a class="text-link" href="#evidence">Inspect the evidence <span>→</span></a>
+            <a class="button button-primary" href="#proof">Replay the cloud case</a>
+            <a class="text-link" href="#evidence">Inspect exact evidence <span>→</span></a>
           </div>
         </div>
 
@@ -96,7 +96,7 @@
       </section>
 
       <section class="section proof-section" id="proof" aria-labelledby="proof-title">
-        <div class="section-kicker"><span>02</span> The live proof</div>
+        <div class="section-kicker"><span>02</span> Verified cloud proof</div>
         <div class="section-heading split-heading">
           <h2 id="proof-title">One alert.<br />A precise boundary.</h2>
           <p>
@@ -112,7 +112,10 @@
               <span class="system-dot"></span>
               <span id="runtime-label">Verified evidence playback</span>
             </div>
-            <span id="case-status">ALERT READY</span>
+            <div class="workbench-status">
+              <a class="receipt-link" href="/evidence/cloud-demo-run.json" target="_blank" rel="noreferrer">Cloud receipt ↗</a>
+              <span id="case-status">ALERT READY</span>
+            </div>
           </div>
 
           <div class="workbench-grid">
@@ -124,8 +127,8 @@
                 <div><dt>Severity</dt><dd class="danger">HIGH</dd></div>
                 <div><dt>Policy</dt><dd>lotline-policy-v1</dd></div>
               </dl>
-              <button class="button button-primary button-wide" id="analyze-button" type="button">
-                Trace exposure
+              <button class="button button-primary button-wide" id="analyze-button" type="button" disabled>
+                Replay cloud trace
               </button>
             </article>
 
@@ -213,8 +216,8 @@
           <div class="approval-copy">
             <h2 id="approval-title">The agent proposes.<br />A person commits.</h2>
             <p>
-              LotLine separates analysis from execution. Nothing is quarantined and no
-              notification task is created until an authorized operator approves the case.
+              LotLine separates analysis from execution. Nothing is marked quarantined and no
+              notification-task record is created until an authorized operator approves the case.
             </p>
           </div>
           <ol class="stage-list">
@@ -253,7 +256,7 @@
           LotLine turns connected operational context into evidence-backed action—without
           pretending that automation replaces accountable food-safety decisions.
         </p>
-        <a class="button button-primary" href="#proof">Replay the verified case</a>
+        <a class="button button-primary" href="#proof">Replay the verified cloud case</a>
         <footer>
           <span>LOTLINE / SYNTHETIC NORTHSTAR FOODS FIXTURE</span>
           <a href="#top">BACK TO TOP ↑</a>

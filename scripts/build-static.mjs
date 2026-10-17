@@ -5,10 +5,13 @@ import path from "node:path";
 const root = process.cwd();
 const source = path.join(root, "frontend");
 const output = path.join(root, "dist");
+const evidenceSource = path.join(root, "evidence", "cloud-demo-run.json");
 
 await rm(output, { force: true, recursive: true });
 await mkdir(output, { recursive: true });
 await cp(source, output, { recursive: true });
+await mkdir(path.join(output, "evidence"), { recursive: true });
+await cp(evidenceSource, path.join(output, "evidence", "cloud-demo-run.json"));
 await cp(path.join(source, "index.html"), path.join(output, "404.html"));
 
 async function collect(directory, prefix = "") {

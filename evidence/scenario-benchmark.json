@@ -1,0 +1,88 @@
+{
+  "execution_status": "MOCKED",
+  "purpose": "Deterministic adversarial policy coverage; not FalkorDB Cloud execution.",
+  "summary": {
+    "scenario_count": 6,
+    "verified": 6
+  },
+  "scenarios": [
+    {
+      "id": "S01",
+      "name": "High-severity direct and shared-line exposure",
+      "expected": "Two direct lots and one uncleaned adjacent lot require action.",
+      "observed": {
+        "affected_lots": [
+          "LOT-BITES-201",
+          "LOT-GRANOLA-101",
+          "LOT-GRANOLA-102"
+        ],
+        "safe_lots_spared": 7
+      },
+      "status": "VERIFIED"
+    },
+    {
+      "id": "S02",
+      "name": "Medium-severity adjacent exposure remains review-only",
+      "expected": "Direct lots require action; the adjacent lot is surfaced for review.",
+      "observed": {
+        "affected_lots": [
+          "LOT-GRANOLA-101",
+          "LOT-GRANOLA-102"
+        ],
+        "review_candidates": [
+          "LOT-BITES-201"
+        ]
+      },
+      "status": "VERIFIED"
+    },
+    {
+      "id": "S03",
+      "name": "Adjacent run outside the 60-minute policy window",
+      "expected": "The late adjacent lot is excluded.",
+      "observed": {
+        "affected_lots": [
+          "LOT-GRANOLA-101",
+          "LOT-GRANOLA-102"
+        ],
+        "safe_lots_spared": 8
+      },
+      "status": "VERIFIED"
+    },
+    {
+      "id": "S04",
+      "name": "Unvalidated cleaning cannot stop propagation",
+      "expected": "Both adjacent runs inside the window remain exposed.",
+      "observed": {
+        "affected_lots": [
+          "LOT-BITES-201",
+          "LOT-GRANOLA-101",
+          "LOT-GRANOLA-102",
+          "LOT-GRANOLA-103"
+        ],
+        "safe_lots_spared": 6
+      },
+      "status": "VERIFIED"
+    },
+    {
+      "id": "S05",
+      "name": "Missing load-bearing lineage edge",
+      "expected": "No path means no proposed action.",
+      "observed": {
+        "decision": "CLEAR",
+        "affected_lots": []
+      },
+      "status": "VERIFIED"
+    },
+    {
+      "id": "S06",
+      "name": "Approval gate and idempotent replay",
+      "expected": "Pre-approval execution is blocked; replay creates no duplicate effect.",
+      "observed": {
+        "pre_approval_blocked": true,
+        "first_new_effects": 5,
+        "replay_new_effects": 0
+      },
+      "status": "VERIFIED"
+    }
+  ]
+}

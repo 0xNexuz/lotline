@@ -1,14 +1,15 @@
 # LotLine Build Harness
 
-Last verified: 2026-10-17 by Codex on the local Windows host.
+Last verified: 2026-10-17 on the local Windows host.
 
 Overall status: **READY — PUBLIC HACKATHON DEMO**
 Conservative readiness score: **90/100**
 
 The complete trace → approval → execute → replay workflow is verified on a real
-FalkorDB Cloud graph and backed by six local invariant tests. The frontend is a
-credential-free production build that replays sanitized cloud evidence. This is
-ready for public hackathon demonstration, not operational food-safety use.
+FalkorDB Cloud graph, seven automated tests, and six documented adversarial
+scenarios. The frontend is a credential-free production build that loads and
+replays the sanitized cloud receipt. This is ready for public hackathon
+demonstration, not operational food-safety use.
 
 Published release evidence:
 
@@ -21,8 +22,7 @@ Open submission gates: record the demo video, confirm registration, submit the
 final form.
 
 Operational blockers (outside hackathon-demo scope): authentication/rate
-limiting, concurrent/partial-failure tests, source provenance, observability,
-and a broader six-scenario benchmark.
+limiting, concurrent/partial-failure tests, source provenance, and observability.
 
 Evidence:
 
@@ -30,4 +30,5 @@ Evidence:
 - `evidence/api-smoke.json`
 - `evidence/demo-run.json`
 - `evidence/cloud-demo-run.json`
+- `evidence/scenario-benchmark.json`
 - `docs/build-harness/14_production-audit.md`

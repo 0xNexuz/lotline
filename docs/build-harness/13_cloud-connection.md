@@ -11,7 +11,7 @@ Date: 2026-10-17
 - Real Cypher seed, direct-lineage, shared-line/cleaning, case, approval, action, evidence, and replay queries.
 - Dedicated cloud HTTP backend in `lotline/api_cloud.py`.
 - Cloud adapter compiles and imports successfully.
-- Existing six local tests still pass after the cloud implementation.
+- Seven local tests, including the six-scenario benchmark, pass after the cloud implementation.
 
 ## Current status
 

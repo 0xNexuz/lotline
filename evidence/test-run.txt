@@ -1,5 +1,5 @@
 Command: python -m unittest discover -s tests -v
-Run date: 2026-10-16
+Run date: 2026-10-17
 
 test_actions_require_approval ... ok
 test_every_quarantine_has_evidence ... ok
@@ -7,8 +7,9 @@ test_execution_is_idempotent ... ok
 test_expected_recall_set_and_safe_lots ... ok
 test_graph_edge_is_load_bearing ... ok
 test_validated_cleaning_excludes_later_run ... ok
+test_all_six_safety_scenarios ... ok
 
-Ran 6 tests in 0.009s
+Ran 7 tests in 0.013s
 OK
 
-Environment note: tests ran against the MOCKED MemoryGraphStore adapter, not a real FalkorDB runtime.
+Environment note: tests and the six-scenario adversarial matrix ran against the MOCKED MemoryGraphStore adapter, not a real FalkorDB runtime. The separate end-to-end cloud receipt is evidence/cloud-demo-run.json.
