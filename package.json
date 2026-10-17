@@ -4,7 +4,7 @@
   "private": true,
   "description": "Graph-native food recall intelligence powered by FalkorDB.",
   "scripts": {
-    "check": "node --check frontend/app.js && node scripts/check-site.mjs",
+    "check": "node --check frontend/app.js && node scripts/check-site.mjs && node scripts/check-secrets.mjs",
     "build": "node scripts/build-static.mjs"
   },
   "engines": {
