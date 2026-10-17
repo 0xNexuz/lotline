@@ -14,11 +14,11 @@ Official criterion weights: **UNKNOWN**.
 
 | Requirement | Status | Action |
 |---|---|---|
-| Public repository | PREPARED | Publish release commit after GitHub re-authentication |
+| Public repository | COMPLETE | https://github.com/0xNexuz/lotline |
 | README + graph model | COMPLETE | Runtime labels, graph model, setup, and non-claims documented |
 | Essential Cypher | COMPLETE | Fixed queries verified on retained FalkorDB Cloud graph |
 | Demo video | NOT IMPLEMENTED | Record the 90-second verified flow |
-| Live app or complete local setup | PREPARED | Static production build and localhost flow verified |
+| Live app or complete local setup | COMPLETE | https://lotline-ai.vercel.app; anonymous HTTP 200 verified |
 | FalkorDB central integration | VERIFIED | `evidence/cloud-demo-run.json` |
 | Track named | COMPLETE | Track 01 |
 | AI assistance disclosure | COMPLETE | README |
@@ -31,7 +31,10 @@ Problem → alert → graph evidence → cleaning exception → approval → act
 
 ## Submission gate
 
-Final status: **READY AFTER PUBLISHING**
-Conservative score: **86/100**
+Final status: **READY FOR VIDEO AND SUBMISSION**
+Conservative score: **90/100**
 
-P0 for submission: public repository, production URL, demo video, registration confirmation, and final submission form. Broader benchmarking is P1 for credibility; operational hardening remains explicitly out of scope.
+P0 still owned by the participant: demo video, registration confirmation, and
+final submission form. The public repository and production URL are complete.
+Broader benchmarking is P1 for credibility; operational hardening remains
+explicitly out of scope.

@@ -2,6 +2,9 @@
 
 LotLine is a graph-native food-recall agent. Given a safety alert about an ingredient lot, it traces direct use and shared-line cross-contact, proposes the smallest policy-supported recall set, waits for operator approval, executes quarantine and notification-task effects, and records explainable evidence paths.
 
+- **Live demo:** https://lotline-ai.vercel.app
+- **Public repository:** https://github.com/0xNexuz/lotline
+
 ## Verified status
 
 LotLine has two explicit runtimes:
@@ -10,6 +13,10 @@ LotLine has two explicit runtimes:
 - **MOCKED — LOCAL:** the deterministic in-memory adapter keeps development and judging reproducible when cloud credentials are unavailable. It exercises the same case semantics but must not be presented as FalkorDB infrastructure.
 
 The cloud credential is never committed. Supply it through environment variables or an ignored `.env` file.
+
+The public Vercel build is intentionally a credential-free playback of the
+sanitized real-cloud proof. It demonstrates the complete judging flow without
+placing a database password or an unauthenticated mutation API on the internet.
 
 ## Run the proof
 

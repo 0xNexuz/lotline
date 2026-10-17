@@ -8,6 +8,6 @@
     "build": "node scripts/build-static.mjs"
   },
   "engines": {
-    "node": ">=20"
+    "node": "24.x"
   }
 }

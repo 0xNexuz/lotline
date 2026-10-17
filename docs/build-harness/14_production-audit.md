@@ -34,6 +34,8 @@ concurrency hardening, or observability.
 | Exact supplied artwork is used | SHA-256 checks in `scripts/check-site.mjs` | VERIFIED |
 | Frontend builds reproducibly | `npm run build` + build manifest | VERIFIED |
 | Source contains no pasted cloud password | scoped credential scan | VERIFIED |
+| Public deployment is anonymously reachable | `https://lotline-ai.vercel.app` returned HTTP 200 | VERIFIED |
+| Public repository is reachable | `https://github.com/0xNexuz/lotline` | VERIFIED |
 | Operational production safety | No auth/concurrency/observability evidence | NOT VERIFIED |
 
 ## Ship gates
@@ -44,7 +46,7 @@ concurrency hardening, or observability.
 - [x] Production static build succeeds.
 - [x] CSP, clickjacking, MIME-sniffing, referrer, and permissions headers configured.
 - [x] Keyboard focus, skip link, section navigation, and responsive navigation present.
-- [ ] Public repository and production URL recorded in release summary.
+- [x] Public repository and production URL recorded in release summary.
 - [ ] Remote CI run passes on the public repository.
 
 ## Remaining boundary
