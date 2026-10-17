@@ -1,0 +1,322 @@
+{
+  "execution_status": "REAL \u2014 CLOUD",
+  "connection": {
+    "ok": true,
+    "graph": "lotline_proof_20261017_002910",
+    "runtime": "REAL \u2014 CLOUD"
+  },
+  "claim_scope": "Synthetic Northstar Foods fixture on a real FalkorDB Cloud graph.",
+  "plan": {
+    "case_id": "CASE-001",
+    "graph_name": "lotline_proof_20261017_002910",
+    "runtime": "REAL \u2014 CLOUD",
+    "status": "AWAITING_APPROVAL",
+    "decision": "RECALL",
+    "policy_version": "lotline-policy-v1",
+    "affected_lots": [
+      "LOT-BITES-201",
+      "LOT-GRANOLA-101",
+      "LOT-GRANOLA-102"
+    ],
+    "affected_lot_count": 3,
+    "safe_lots_spared": 7,
+    "locations": [
+      "STORE-NORTH",
+      "STORE-SOUTH"
+    ],
+    "evidence": [
+      {
+        "id": "EVD-CROSS-LOT-BITES-201",
+        "exposure_type": "CROSS_CONTACT",
+        "nodes": [
+          "ALERT-001",
+          "ING-ALM-042",
+          "RUN-100",
+          "LINE-01",
+          "RUN-101",
+          "LOT-BITES-201"
+        ],
+        "relationships": [
+          "FLAGS",
+          "USED_IN",
+          "RAN_ON",
+          "RAN_ON_REVERSE",
+          "CREATED"
+        ],
+        "reason": "Produced on LINE-01 within 60 minutes without validated cleaning between runs.",
+        "query_id": "Q-SHARED-LINE-EXPOSURE"
+      },
+      {
+        "id": "EVD-DIRECT-LOT-GRANOLA-101",
+        "exposure_type": "DIRECT",
+        "nodes": [
+          "ALERT-001",
+          "ING-ALM-042",
+          "RUN-100",
+          "LOT-GRANOLA-101"
+        ],
+        "relationships": [
+          "FLAGS",
+          "USED_IN",
+          "CREATED"
+        ],
+        "reason": "The flagged ingredient lot was used directly in the run that created this lot.",
+        "query_id": "Q-DIRECT-LINEAGE"
+      },
+      {
+        "id": "EVD-DIRECT-LOT-GRANOLA-102",
+        "exposure_type": "DIRECT",
+        "nodes": [
+          "ALERT-001",
+          "ING-ALM-042",
+          "RUN-100",
+          "LOT-GRANOLA-102"
+        ],
+        "relationships": [
+          "FLAGS",
+          "USED_IN",
+          "CREATED"
+        ],
+        "reason": "The flagged ingredient lot was used directly in the run that created this lot.",
+        "query_id": "Q-DIRECT-LINEAGE"
+      }
+    ],
+    "actions": [
+      {
+        "id": "ACT-NOTIFY-STORE-NORTH",
+        "action_type": "CREATE_NOTIFICATION_TASK",
+        "status": "PROPOSED",
+        "idempotency_key": "69d8dd7d5988ced58ba73f422bd96150bae1460ab57ffa2def8b330c60b6066e",
+        "target_id": "STORE-NORTH"
+      },
+      {
+        "id": "ACT-NOTIFY-STORE-SOUTH",
+        "action_type": "CREATE_NOTIFICATION_TASK",
+        "status": "PROPOSED",
+        "idempotency_key": "06934593644d5d6e5fde130fa4c01fee5c9da814e54605c89f936e7ea19a8ea1",
+        "target_id": "STORE-SOUTH"
+      },
+      {
+        "id": "ACT-QUARANTINE-LOT-BITES-201",
+        "action_type": "QUARANTINE",
+        "status": "PROPOSED",
+        "idempotency_key": "2621844138a3a7f5c7c06e5291e5ce75ab95ff411c1417846151229ffb052fca",
+        "target_id": "LOT-BITES-201"
+      },
+      {
+        "id": "ACT-QUARANTINE-LOT-GRANOLA-101",
+        "action_type": "QUARANTINE",
+        "status": "PROPOSED",
+        "idempotency_key": "dfcc36502fd311ae0e91b25862af61b96f2a3f93fd1617192e679d2c02a8a1a1",
+        "target_id": "LOT-GRANOLA-101"
+      },
+      {
+        "id": "ACT-QUARANTINE-LOT-GRANOLA-102",
+        "action_type": "QUARANTINE",
+        "status": "PROPOSED",
+        "idempotency_key": "e8dcf59e29ae714382b072dc40ce6ae346603580819a6ca0d453986b66732c2c",
+        "target_id": "LOT-GRANOLA-102"
+      }
+    ]
+  },
+  "approved_status": "APPROVED",
+  "first_execution": {
+    "case_id": "CASE-001",
+    "status": "COMPLETED",
+    "new_effects": 5,
+    "existing_effects": 0,
+    "effects": [
+      {
+        "action_id": "ACT-NOTIFY-STORE-NORTH",
+        "action_type": "CREATE_NOTIFICATION_TASK",
+        "target_id": "STORE-NORTH",
+        "outcome": "NOTIFICATION_TASK_CREATED",
+        "idempotency_key": "69d8dd7d5988ced58ba73f422bd96150bae1460ab57ffa2def8b330c60b6066e"
+      },
+      {
+        "action_id": "ACT-NOTIFY-STORE-SOUTH",
+        "action_type": "CREATE_NOTIFICATION_TASK",
+        "target_id": "STORE-SOUTH",
+        "outcome": "NOTIFICATION_TASK_CREATED",
+        "idempotency_key": "06934593644d5d6e5fde130fa4c01fee5c9da814e54605c89f936e7ea19a8ea1"
+      },
+      {
+        "action_id": "ACT-QUARANTINE-LOT-BITES-201",
+        "action_type": "QUARANTINE",
+        "target_id": "LOT-BITES-201",
+        "outcome": "LOT_QUARANTINED",
+        "idempotency_key": "2621844138a3a7f5c7c06e5291e5ce75ab95ff411c1417846151229ffb052fca"
+      },
+      {
+        "action_id": "ACT-QUARANTINE-LOT-GRANOLA-101",
+        "action_type": "QUARANTINE",
+        "target_id": "LOT-GRANOLA-101",
+        "outcome": "LOT_QUARANTINED",
+        "idempotency_key": "dfcc36502fd311ae0e91b25862af61b96f2a3f93fd1617192e679d2c02a8a1a1"
+      },
+      {
+        "action_id": "ACT-QUARANTINE-LOT-GRANOLA-102",
+        "action_type": "QUARANTINE",
+        "target_id": "LOT-GRANOLA-102",
+        "outcome": "LOT_QUARANTINED",
+        "idempotency_key": "e8dcf59e29ae714382b072dc40ce6ae346603580819a6ca0d453986b66732c2c"
+      }
+    ]
+  },
+  "replay_execution": {
+    "case_id": "CASE-001",
+    "status": "COMPLETED",
+    "new_effects": 0,
+    "existing_effects": 5,
+    "effects": [
+      {
+        "action_id": "ACT-NOTIFY-STORE-NORTH",
+        "action_type": "CREATE_NOTIFICATION_TASK",
+        "target_id": "STORE-NORTH",
+        "outcome": "NOTIFICATION_TASK_CREATED",
+        "idempotency_key": "69d8dd7d5988ced58ba73f422bd96150bae1460ab57ffa2def8b330c60b6066e"
+      },
+      {
+        "action_id": "ACT-NOTIFY-STORE-SOUTH",
+        "action_type": "CREATE_NOTIFICATION_TASK",
+        "target_id": "STORE-SOUTH",
+        "outcome": "NOTIFICATION_TASK_CREATED",
+        "idempotency_key": "06934593644d5d6e5fde130fa4c01fee5c9da814e54605c89f936e7ea19a8ea1"
+      },
+      {
+        "action_id": "ACT-QUARANTINE-LOT-BITES-201",
+        "action_type": "QUARANTINE",
+        "target_id": "LOT-BITES-201",
+        "outcome": "LOT_QUARANTINED",
+        "idempotency_key": "2621844138a3a7f5c7c06e5291e5ce75ab95ff411c1417846151229ffb052fca"
+      },
+      {
+        "action_id": "ACT-QUARANTINE-LOT-GRANOLA-101",
+        "action_type": "QUARANTINE",
+        "target_id": "LOT-GRANOLA-101",
+        "outcome": "LOT_QUARANTINED",
+        "idempotency_key": "dfcc36502fd311ae0e91b25862af61b96f2a3f93fd1617192e679d2c02a8a1a1"
+      },
+      {
+        "action_id": "ACT-QUARANTINE-LOT-GRANOLA-102",
+        "action_type": "QUARANTINE",
+        "target_id": "LOT-GRANOLA-102",
+        "outcome": "LOT_QUARANTINED",
+        "idempotency_key": "e8dcf59e29ae714382b072dc40ce6ae346603580819a6ca0d453986b66732c2c"
+      }
+    ]
+  },
+  "final_case": {
+    "case_id": "CASE-001",
+    "graph_name": "lotline_proof_20261017_002910",
+    "runtime": "REAL \u2014 CLOUD",
+    "status": "COMPLETED",
+    "decision": "RECALL",
+    "policy_version": "lotline-policy-v1",
+    "affected_lots": [
+      "LOT-BITES-201",
+      "LOT-GRANOLA-101",
+      "LOT-GRANOLA-102"
+    ],
+    "affected_lot_count": 3,
+    "safe_lots_spared": 7,
+    "locations": [
+      "STORE-NORTH",
+      "STORE-SOUTH"
+    ],
+    "evidence": [
+      {
+        "id": "EVD-CROSS-LOT-BITES-201",
+        "exposure_type": "CROSS_CONTACT",
+        "nodes": [
+          "ALERT-001",
+          "ING-ALM-042",
+          "RUN-100",
+          "LINE-01",
+          "RUN-101",
+          "LOT-BITES-201"
+        ],
+        "relationships": [
+          "FLAGS",
+          "USED_IN",
+          "RAN_ON",
+          "RAN_ON_REVERSE",
+          "CREATED"
+        ],
+        "reason": "Produced on LINE-01 within 60 minutes without validated cleaning between runs.",
+        "query_id": "Q-SHARED-LINE-EXPOSURE"
+      },
+      {
+        "id": "EVD-DIRECT-LOT-GRANOLA-101",
+        "exposure_type": "DIRECT",
+        "nodes": [
+          "ALERT-001",
+          "ING-ALM-042",
+          "RUN-100",
+          "LOT-GRANOLA-101"
+        ],
+        "relationships": [
+          "FLAGS",
+          "USED_IN",
+          "CREATED"
+        ],
+        "reason": "The flagged ingredient lot was used directly in the run that created this lot.",
+        "query_id": "Q-DIRECT-LINEAGE"
+      },
+      {
+        "id": "EVD-DIRECT-LOT-GRANOLA-102",
+        "exposure_type": "DIRECT",
+        "nodes": [
+          "ALERT-001",
+          "ING-ALM-042",
+          "RUN-100",
+          "LOT-GRANOLA-102"
+        ],
+        "relationships": [
+          "FLAGS",
+          "USED_IN",
+          "CREATED"
+        ],
+        "reason": "The flagged ingredient lot was used directly in the run that created this lot.",
+        "query_id": "Q-DIRECT-LINEAGE"
+      }
+    ],
+    "actions": [
+      {
+        "id": "ACT-NOTIFY-STORE-NORTH",
+        "action_type": "CREATE_NOTIFICATION_TASK",
+        "status": "COMPLETED",
+        "idempotency_key": "69d8dd7d5988ced58ba73f422bd96150bae1460ab57ffa2def8b330c60b6066e",
+        "target_id": "STORE-NORTH"
+      },
+      {
+        "id": "ACT-NOTIFY-STORE-SOUTH",
+        "action_type": "CREATE_NOTIFICATION_TASK",
+        "status": "COMPLETED",
+        "idempotency_key": "06934593644d5d6e5fde130fa4c01fee5c9da814e54605c89f936e7ea19a8ea1",
+        "target_id": "STORE-SOUTH"
+      },
+      {
+        "id": "ACT-QUARANTINE-LOT-BITES-201",
+        "action_type": "QUARANTINE",
+        "status": "COMPLETED",
+        "idempotency_key": "2621844138a3a7f5c7c06e5291e5ce75ab95ff411c1417846151229ffb052fca",
+        "target_id": "LOT-BITES-201"
+      },
+      {
+        "id": "ACT-QUARANTINE-LOT-GRANOLA-101",
+        "action_type": "QUARANTINE",
+        "status": "COMPLETED",
+        "idempotency_key": "dfcc36502fd311ae0e91b25862af61b96f2a3f93fd1617192e679d2c02a8a1a1",
+        "target_id": "LOT-GRANOLA-101"
+      },
+      {
+        "id": "ACT-QUARANTINE-LOT-GRANOLA-102",
+        "action_type": "QUARANTINE",
+        "status": "COMPLETED",
+        "idempotency_key": "e8dcf59e29ae714382b072dc40ce6ae346603580819a6ca0d453986b66732c2c",
+        "target_id": "LOT-GRANOLA-102"
+      }
+    ]
+  }
+}

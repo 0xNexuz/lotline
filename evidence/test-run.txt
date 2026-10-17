@@ -1,0 +1,14 @@
+Command: python -m unittest discover -s tests -v
+Run date: 2026-10-16
+
+test_actions_require_approval ... ok
+test_every_quarantine_has_evidence ... ok
+test_execution_is_idempotent ... ok
+test_expected_recall_set_and_safe_lots ... ok
+test_graph_edge_is_load_bearing ... ok
+test_validated_cleaning_excludes_later_run ... ok
+
+Ran 6 tests in 0.009s
+OK
+
+Environment note: tests ran against the MOCKED MemoryGraphStore adapter, not a real FalkorDB runtime.

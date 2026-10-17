@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="LotLine is a graph-native food recall agent that traces direct use and shared-line exposure, explains every affected lot, and executes only after human approval."
+    />
+    <meta name="theme-color" content="#071b20" />
+    <title>LotLine — See every lot the alert can reach</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/png" href="/assets/lotline-eye-reference.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the proof</a>
+    <div class="page-grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="LotLine home">
+        <span class="wordmark-mark"><img src="/assets/lotline-mark.svg" alt="" /></span>
+        <span>LOTLINE</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#top" data-nav="top">Intro</a>
+        <a href="#proof" data-nav="proof">Proof</a>
+        <a href="#evidence" data-nav="evidence">Evidence</a>
+        <a href="#control" data-nav="control">Control</a>
+        <a href="#guardrails" data-nav="guardrails">Boundary</a>
+      </nav>
+      <a class="header-cta" href="#proof">Run the case <span>↘</span></a>
+    </header>
+
+    <nav class="section-rail" aria-label="Page sections">
+      <a href="#top" data-nav="top"><span>01</span><b>Intro</b></a>
+      <a href="#proof" data-nav="proof"><span>02</span><b>Proof</b></a>
+      <a href="#evidence" data-nav="evidence"><span>03</span><b>Evidence</b></a>
+      <a href="#control" data-nav="control"><span>04</span><b>Control</b></a>
+      <a href="#guardrails" data-nav="guardrails"><span>05</span><b>Boundary</b></a>
+    </nav>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-art" aria-hidden="true">
+          <img
+            class="hero-portrait"
+            src="/assets/lotline-ornate-reference.png"
+            alt=""
+          />
+          <div class="hero-vignette"></div>
+          <img
+            class="hero-eye"
+            src="/assets/lotline-eye-reference.png"
+            alt=""
+          />
+          <div class="scan-line scan-line-one"></div>
+          <div class="scan-line scan-line-two"></div>
+        </div>
+
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="pulse"></span>
+            Graph-native recall intelligence
+          </div>
+          <h1 id="hero-title">See every lot<br />the alert can reach.</h1>
+          <p>
+            LotLine follows ingredient lineage, production adjacency, cleaning events,
+            shipments, and stores—then proposes the smallest defensible recall.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#proof">Open the live case</a>
+            <a class="text-link" href="#evidence">Inspect the evidence <span>→</span></a>
+          </div>
+        </div>
+
+        <aside class="proof-seal" aria-label="Verified cloud run">
+          <span class="seal-index">01</span>
+          <div>
+            <strong>REAL CLOUD PROOF</strong>
+            <span>FalkorDB · 17 Oct 2026</span>
+          </div>
+        </aside>
+
+        <div class="hero-caption">VIGILANCE / LINEAGE / CONTROLLED ACTION</div>
+      </section>
+
+      <section class="proof-strip" aria-label="Verified result summary">
+        <div><span>03</span><p>affected lots</p></div>
+        <div><span>07</span><p>safe lots spared</p></div>
+        <div><span>05</span><p>approved effects</p></div>
+        <div><span>00</span><p>duplicates on replay</p></div>
+        <p class="strip-note">Verified on graph <strong>lotline_proof_20261017_002910</strong></p>
+      </section>
+
+      <section class="section proof-section" id="proof" aria-labelledby="proof-title">
+        <div class="section-kicker"><span>02</span> The live proof</div>
+        <div class="section-heading split-heading">
+          <h2 id="proof-title">One alert.<br />A precise boundary.</h2>
+          <p>
+            A high-severity undeclared-allergen alert enters the graph. LotLine finds direct
+            exposure, checks the shared production line, respects validated cleaning, and
+            prepares actions for a human operator.
+          </p>
+        </div>
+
+        <div class="workbench" data-stage="ready">
+          <div class="workbench-topbar">
+            <div>
+              <span class="system-dot"></span>
+              <span id="runtime-label">Verified evidence playback</span>
+            </div>
+            <span id="case-status">ALERT READY</span>
+          </div>
+
+          <div class="workbench-grid">
+            <article class="alert-card">
+              <div class="card-label">Incoming alert / ALERT-001</div>
+              <h3>Possible undeclared almond contamination</h3>
+              <dl>
+                <div><dt>Ingredient lot</dt><dd>ING-ALM-042</dd></div>
+                <div><dt>Severity</dt><dd class="danger">HIGH</dd></div>
+                <div><dt>Policy</dt><dd>lotline-policy-v1</dd></div>
+              </dl>
+              <button class="button button-primary button-wide" id="analyze-button" type="button">
+                Trace exposure
+              </button>
+            </article>
+
+            <div class="trace-panel" aria-live="polite">
+              <div class="trace-header">
+                <span>Evidence traversal</span>
+                <span id="trace-count">0 paths</span>
+              </div>
+              <div class="trace-canvas" id="trace-canvas">
+                <div class="trace-empty">
+                  <span class="reticle">◎</span>
+                  <p>Run the alert to reveal its graph-supported recall boundary.</p>
+                </div>
+              </div>
+            </div>
+
+            <aside class="decision-panel">
+              <div class="decision-number" id="affected-count">—</div>
+              <p class="decision-label">lots require action</p>
+              <div class="decision-list" id="decision-list">
+                <p>No actions proposed yet.</p>
+              </div>
+              <button class="button button-outline button-wide" id="approve-button" type="button" disabled>
+                Approve as OP-001
+              </button>
+              <button class="button button-gold button-wide" id="execute-button" type="button" disabled>
+                Execute actions
+              </button>
+            </aside>
+          </div>
+
+          <div class="workbench-footer">
+            <span id="workbench-message">Waiting for analysis.</span>
+            <button class="reset-button" id="reset-button" type="button">Reset playback</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section evidence-section" id="evidence" aria-labelledby="evidence-title">
+        <div class="section-kicker light"><span>03</span> Why each lot is here</div>
+        <div class="evidence-intro">
+          <h2 id="evidence-title">No black box.<br />Every action carries its path.</h2>
+          <p>
+            FalkorDB is the reasoning surface, not decorative storage. Remove the graph edges
+            and LotLine cannot reach the same decision.
+          </p>
+        </div>
+
+        <div class="path-ledger">
+          <article class="path-card path-card-featured">
+            <div class="path-meta">
+              <span class="path-type">Cross-contact discovery</span>
+              <span>Q-SHARED-LINE-EXPOSURE</span>
+            </div>
+            <h3>The lot a table lookup misses.</h3>
+            <div class="node-path" aria-label="Alert to cross-contact product lot path">
+              <span>ALERT-001</span><i>FLAGS</i><span>ING-ALM-042</span><i>USED_IN</i>
+              <span>RUN-100</span><i>RAN_ON</i><span>LINE-01</span><i>RAN_ON</i>
+              <span>RUN-101</span><i>CREATED</i><span class="node-alert">LOT-BITES-201</span>
+            </div>
+            <p>
+              Produced on the same line within 60 minutes, with no validated cleaning between
+              runs. LotLine catches the adjacent exposure and explains it.
+            </p>
+          </article>
+
+          <article class="path-card">
+            <div class="path-meta">
+              <span class="path-type">Direct lineage</span>
+              <span>Q-DIRECT-LINEAGE</span>
+            </div>
+            <h3>Two lots directly inherit the alert.</h3>
+            <div class="mini-ledger">
+              <div><span>LOT-GRANOLA-101</span><strong>DIRECT</strong></div>
+              <div><span>LOT-GRANOLA-102</span><strong>DIRECT</strong></div>
+            </div>
+            <p>The flagged ingredient was used in RUN-100, which created both product lots.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section approval-section" id="control" aria-labelledby="approval-title">
+        <div class="section-kicker"><span>04</span> Controlled agency</div>
+        <div class="approval-layout">
+          <div class="approval-copy">
+            <h2 id="approval-title">The agent proposes.<br />A person commits.</h2>
+            <p>
+              LotLine separates analysis from execution. Nothing is quarantined and no
+              notification task is created until an authorized operator approves the case.
+            </p>
+          </div>
+          <ol class="stage-list">
+            <li><span>01</span><div><strong>Trace</strong><p>Follow direct and adjacent exposure paths.</p></div></li>
+            <li><span>02</span><div><strong>Explain</strong><p>Attach evidence to every proposed action.</p></div></li>
+            <li><span>03</span><div><strong>Approve</strong><p>Require an accountable human decision.</p></div></li>
+            <li><span>04</span><div><strong>Execute once</strong><p>Idempotency keys prevent duplicate effects.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section guardrail-section" id="guardrails" aria-labelledby="guardrail-title">
+        <div class="guardrail-art" aria-hidden="true">
+          <img src="/assets/lotline-ornate-reference.png" alt="" />
+          <img class="guardrail-eye" src="/assets/lotline-eye-reference.png" alt="" />
+        </div>
+        <div class="guardrail-copy">
+          <div class="section-kicker light"><span>05</span> The stopping rule matters</div>
+          <h2 id="guardrail-title">Recall what is exposed.<br />Spare what is not.</h2>
+          <p>
+            A validated cleaning event after RUN-101 breaks the cross-contact chain before
+            RUN-102. That single graph fact keeps LOT-GRANOLA-103—and six unrelated lots—out
+            of the recall.
+          </p>
+          <div class="guardrail-metric"><strong>7</strong><span>safe lots deliberately spared</span></div>
+        </div>
+      </section>
+
+      <section class="section closing-section" aria-labelledby="closing-title">
+        <div class="closing-mark" aria-hidden="true">
+          <img src="/assets/lotline-eye-reference.png" alt="" />
+        </div>
+        <div class="section-kicker"><span>06</span> Graph Hacks · FalkorDB</div>
+        <h2 id="closing-title">Trace wider.<br />Recall narrower.</h2>
+        <p>
+          LotLine turns connected operational context into evidence-backed action—without
+          pretending that automation replaces accountable food-safety decisions.
+        </p>
+        <a class="button button-primary" href="#proof">Replay the verified case</a>
+        <footer>
+          <span>LOTLINE / SYNTHETIC NORTHSTAR FOODS FIXTURE</span>
+          <a href="#top">BACK TO TOP ↑</a>
+          <span>REAL FALKORDB CLOUD GRAPH</span>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>

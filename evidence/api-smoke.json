@@ -1,0 +1,24 @@
+{
+  "runDate": "2026-10-16",
+  "runtime": "MOCKED",
+  "health": {
+    "status": "ok",
+    "graph_runtime": "MOCKED"
+  },
+  "plan": {
+    "case_id": "CASE-API-001",
+    "affected_lots": [
+      "LOT-BITES-201",
+      "LOT-GRANOLA-101",
+      "LOT-GRANOLA-102"
+    ],
+    "safe_lots_spared": 7,
+    "status": "AWAITING_APPROVAL"
+  },
+  "approved_status": "APPROVED",
+  "execution": {
+    "status": "COMPLETED",
+    "new_effects": 5,
+    "existing_effects": 0
+  }
+}

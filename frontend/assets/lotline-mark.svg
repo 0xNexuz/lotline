@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">LotLine mark</title>
+  <desc id="desc">A watchful eye built from connected graph lines.</desc>
+  <rect width="128" height="128" rx="28" fill="#06191e"/>
+  <path d="M18 65c14-25 29-36 46-36s32 11 46 36c-14 23-29 34-46 34S32 88 18 65Z" fill="none" stroke="#d5bd91" stroke-width="5"/>
+  <path d="M31 64c10-12 21-18 33-18 13 0 24 6 34 18-10 12-21 18-34 18-12 0-23-6-33-18Z" fill="#0a4651" stroke="#eee9dd" stroke-width="3"/>
+  <circle cx="64" cy="64" r="13" fill="#06191e" stroke="#f36f54" stroke-width="5"/>
+  <circle cx="64" cy="64" r="4" fill="#eee9dd"/>
+  <path d="M18 65H7m103 0h11M64 29V16m0 83v13" stroke="#b89a68" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="7" cy="65" r="4" fill="#f36f54"/>
+  <circle cx="121" cy="65" r="4" fill="#f36f54"/>
+  <circle cx="64" cy="15" r="4" fill="#d5bd91"/>
+  <circle cx="64" cy="113" r="4" fill="#d5bd91"/>
+</svg>

@@ -1,0 +1,17 @@
+{
+  "name": "LotLine",
+  "short_name": "LotLine",
+  "description": "A graph-native food recall agent with evidence-backed, approval-gated action.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06191e",
+  "theme_color": "#06191e",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
