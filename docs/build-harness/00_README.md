@@ -15,9 +15,10 @@ Published release evidence:
 1. Public repository: https://github.com/0xNexuz/lotline
 2. Public production demo: https://lotline-ai.vercel.app
 3. Anonymous HTTP response, favicon, and production security headers verified.
+4. GitHub Actions verification passed on the public release commit.
 
 Open submission gates: record the demo video, confirm registration, submit the
-final form, and confirm the final GitHub Actions run passes.
+final form.
 
 Operational blockers (outside hackathon-demo scope): authentication/rate
 limiting, concurrent/partial-failure tests, source provenance, observability,
