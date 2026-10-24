@@ -1,6 +1,6 @@
 # Production Audit
 
-Date: 2026-10-17
+Date: 2026-10-17; release reverified 2026-10-24
 
 ## Verdict
 
@@ -35,7 +35,7 @@ concurrency hardening, or observability.
 | Exact supplied artwork is used | SHA-256 checks in `scripts/check-site.mjs` | VERIFIED |
 | Frontend builds reproducibly | `npm run build` + build manifest | VERIFIED |
 | Source contains no pasted cloud password | scoped credential scan | VERIFIED |
-| Public deployment is anonymously reachable | `https://lotline-ai.vercel.app` returned HTTP 200 | VERIFIED |
+| Public deployment is anonymously reachable | `https://lotline-ai.vercel.app` served the updated UI and receipt in browser on 2026-10-24 | VERIFIED |
 | Public repository is reachable | `https://github.com/0xNexuz/lotline` | VERIFIED |
 | Scenario breadth | `evidence/scenario-benchmark.json` | VERIFIED — MOCKED |
 | Public interaction reads cloud result | runtime-loaded cloud receipt + browser flow | VERIFIED |
@@ -51,7 +51,7 @@ concurrency hardening, or observability.
 - [x] CSP, clickjacking, MIME-sniffing, referrer, and permissions headers configured.
 - [x] Keyboard focus, skip link, section navigation, and responsive navigation present.
 - [x] Public repository and production URL recorded in release summary.
-- [x] Remote CI run passes on the public repository.
+- [x] Remote CI run 40096858519 passes on the public release repository.
 
 ## Remaining boundary
 

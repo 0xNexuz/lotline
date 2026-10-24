@@ -8,7 +8,7 @@ Last updated: 2026-10-24. Keep this record evidence-based and free of secrets.
 - Repository: https://github.com/0xNexuz/lotline (public).
 - Branch and last audited implementation commit: `main`, `723028a`. Check Git for the current HEAD before acting.
 - Current stage: READINESS / SUBMISSION_PREPARATION.
-- Status: implementation and source verification complete; Vercel still serves the previous interface as of 2026-10-24, so the latest UI release is not yet verified live.
+- Status: implementation, CI, and public Vercel release VERIFIED; hackathon submission remains UNVERIFIED and the published deadline has passed.
 - Approved scope: product audit, UI/navigation refinement, documentation, public GitHub and Vercel release, and submission-answer preparation. No final hackathon submission was authorized or performed.
 
 ## Hackathon
@@ -37,8 +37,11 @@ Last updated: 2026-10-24. Keep this record evidence-based and free of secrets.
 | 2026-10-24 | `python -m unittest discover -s tests -v` via bundled Python | PASS; seven tests |
 | 2026-10-24 | GitHub Actions run 39060990863 for `723028a` | PASS |
 | 2026-10-24 | Public Vercel browser inspection | OLD interface still live; latest release UNVERIFIED |
+| 2026-10-24 | Vercel deployment `dpl_8aZzuV6Zc4gJnJqVf6sCTe8Ddgy6` | READY; browser verified trace → approve → execute playback and deployed receipt |
+| 2026-10-24 | `https://lotline-ai.vercel.app` | VERIFIED short alias serves new copy and receipt link |
+| 2026-10-24 | GitHub Actions run 40096858519 for `4b3673a` | PASS |
 
-Open submission gates: latest Vercel release verification, public/unlisted YouTube demo video, registration/form availability confirmation, and participant review of answers. No real company integrations or operational deployment claim is approved.
+Open submission gates: public/unlisted YouTube demo video, registration/form availability confirmation, and participant review of answers. The official rules say submissions closed on 2026-10-18, so do not claim the project can still be submitted without organizer confirmation. No real company integrations or operational deployment claim is approved.
 
 ## Decision log
 
@@ -56,4 +59,4 @@ Open submission gates: latest Vercel release verification, public/unlisted YouTu
 
 ## Next action
 
-Verify the linked Vercel target, release the tested source, and check the short public URL and cloud receipt. Then provide the copy-ready form answers while flagging the missing video and elapsed published deadline. Do not submit the form on the participant's behalf.
+Provide the copy-ready form answers while flagging the missing video and elapsed published deadline. If the participant obtains an extension or organizer approval, record a demo video and submit through their account. Do not submit the form on the participant's behalf.

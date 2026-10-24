@@ -5,6 +5,7 @@ const root = process.cwd();
 const ignoredDirectories = new Set([
   ".git",
   ".npm-cache",
+  ".npm-cache-release",
   ".venv",
   ".vercel",
   "__pycache__",

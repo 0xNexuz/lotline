@@ -1,6 +1,6 @@
 # LotLine Build Harness
 
-Last verified: 2026-10-17 on the local Windows host.
+Last verified: 2026-10-24 on the local Windows host and public Vercel deployment.
 
 Overall status: **READY — PUBLIC HACKATHON DEMO**
 Conservative readiness score: **90/100**
@@ -16,10 +16,13 @@ Published release evidence:
 1. Public repository: https://github.com/0xNexuz/lotline
 2. Public production demo: https://lotline-ai.vercel.app
 3. Anonymous HTTP response, favicon, and production security headers verified.
-4. GitHub Actions verification passed on the public release commit.
+4. GitHub Actions verification passed on release commit `4b3673a`.
+5. Latest public release and retained cloud receipt verified in the browser;
+   trace → approval → execute playback completed with zero replay duplicates.
 
-Open submission gates: record the demo video, confirm registration, submit the
-final form.
+Open submission gates: record the demo video and confirm registration/form
+availability. The official rules state that submissions closed October 18, 2026
+at 11:59 PM IST, so organizer confirmation would be needed for a late entry.
 
 Operational blockers (outside hackathon-demo scope): authentication/rate
 limiting, concurrent/partial-failure tests, source provenance, and observability.

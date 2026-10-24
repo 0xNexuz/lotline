@@ -1,0 +1,8 @@
+.npm-cache/
+.npm-cache-release/
+.env
+.env.*
+!.env.example
+__pycache__/
+.venv/
+dist/

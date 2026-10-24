@@ -8,7 +8,7 @@
 - Primary track: Agents That Act on Connected Data.
 - Deadline: October 18, 2026, 11:59 PM IST (7:29 PM Africa/Lagos).
 
-Official criterion weights: **UNKNOWN**.
+Official judging criteria: six equally weighted categories — graph-native FalkorDB use, agent effectiveness, potential impact, technical excellence, explainability/provenance, and creativity/presentation.
 
 Official rules checked: https://www.wemakedevs.org/hackathons/falkordb/rules
 
@@ -20,7 +20,7 @@ Official rules checked: https://www.wemakedevs.org/hackathons/falkordb/rules
 | README + graph model | COMPLETE | Runtime labels, graph model, setup, and non-claims documented |
 | Essential Cypher | COMPLETE | Fixed queries verified on retained FalkorDB Cloud graph |
 | Demo video | NOT IMPLEMENTED | Record the 90-second verified flow |
-| Live app or complete local setup | COMPLETE | https://lotline-ai.vercel.app; anonymous HTTP 200 verified |
+| Live app or complete local setup | COMPLETE | https://lotline-ai.vercel.app; updated production browser flow and receipt verified 2026-10-24 |
 | FalkorDB central integration | VERIFIED | `evidence/cloud-demo-run.json` |
 | Track named | COMPLETE | Track 01 |
 | AI assistance disclosure | COMPLETE | README |
@@ -75,10 +75,12 @@ Problem → alert → graph evidence → cleaning exception → approval → act
 
 ## Submission gate
 
-Final status: **NOT READY TO SUBMIT — VIDEO AND REGISTRATION CONFIRMATION OUTSTANDING**
+Final status: **NOT SUBMITTED — VIDEO AND REGISTRATION CONFIRMATION OUTSTANDING; PUBLISHED DEADLINE PASSED**
 Conservative score: **90/100**
 
-P0 still owned by the participant: demo video, registration confirmation, and
-final submission form. The public repository and production URL are complete.
+P0 still owned by the participant: demo video and registration/form availability
+confirmation with the organizers. Official submissions closed October 18, 2026
+at 11:59 PM IST, so a late entry must not be assumed possible. The public
+repository and production URL are complete.
 The six-scenario benchmark is complete. Operational hardening remains explicitly
 out of scope for the public credential-free demonstrator.
