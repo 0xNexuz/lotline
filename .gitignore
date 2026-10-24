@@ -5,6 +5,7 @@ __pycache__/
 !.env.example
 .vercel/
 .npm-cache/
+.npm-cache-release/
 dist/
 *.log
 evidence/*.tmp
