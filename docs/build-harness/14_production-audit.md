@@ -51,7 +51,7 @@ concurrency hardening, or observability.
 - [x] CSP, clickjacking, MIME-sniffing, referrer, and permissions headers configured.
 - [x] Keyboard focus, skip link, section navigation, and responsive navigation present.
 - [x] Public repository and production URL recorded in release summary.
-- [x] Remote CI run 40096858519 passes on the public release repository.
+- [x] Remote CI run 40097370148 passes on the final deployed source commit.
 
 ## Remaining boundary
 

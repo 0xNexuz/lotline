@@ -40,6 +40,8 @@ Last updated: 2026-10-24. Keep this record evidence-based and free of secrets.
 | 2026-10-24 | Vercel deployment `dpl_8aZzuV6Zc4gJnJqVf6sCTe8Ddgy6` | READY; browser verified trace → approve → execute playback and deployed receipt |
 | 2026-10-24 | `https://lotline-ai.vercel.app` | VERIFIED short alias serves new copy and receipt link |
 | 2026-10-24 | GitHub Actions run 40096858519 for `4b3673a` | PASS |
+| 2026-10-24 | Vercel deployment `dpl_3PapHpDQPnPyRz27bDYo34BWTnZf` from `d10c088` | READY; final hardened build uploaded 17.1 KB / 62 files and short alias verified |
+| 2026-10-24 | GitHub Actions run 40097370148 for `d10c088` | PASS |
 
 Open submission gates: public/unlisted YouTube demo video, registration/form availability confirmation, and participant review of answers. The official rules say submissions closed on 2026-10-18, so do not claim the project can still be submitted without organizer confirmation. No real company integrations or operational deployment claim is approved.
 

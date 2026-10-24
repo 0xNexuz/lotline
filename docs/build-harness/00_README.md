@@ -16,7 +16,7 @@ Published release evidence:
 1. Public repository: https://github.com/0xNexuz/lotline
 2. Public production demo: https://lotline-ai.vercel.app
 3. Anonymous HTTP response, favicon, and production security headers verified.
-4. GitHub Actions verification passed on release commit `4b3673a`.
+4. GitHub Actions verification passed on final deployed source commit `d10c088`.
 5. Latest public release and retained cloud receipt verified in the browser;
    trace → approval → execute playback completed with zero replay duplicates.
 
